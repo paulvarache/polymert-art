@@ -1,0 +1,27 @@
+<dom-module id="art-editor">
+    <template>
+        <style>
+            :host textarea {
+                width: 500px;
+                height: 500px;
+            }
+        </style>
+        <textarea value="{{code::keyup}}"></textarea>
+    </template>
+</dom-module>
+
+<script>
+    class ArtEditor {
+        beforeRegister () {
+            this.is = 'art-editor';
+            this.properties = {
+                code: {
+                    type: String,
+                    notify: true
+                }
+            }
+        }
+    }
+
+    Polymer(ArtEditor);
+</script>

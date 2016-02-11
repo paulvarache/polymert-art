@@ -1,0 +1,40 @@
+<script src="../services/eval-art.js"></script>
+
+<dom-module id="art-canvas">
+    <template>
+        <style>
+
+        </style>
+        <canvas id="canvas" width="500" height="500"></canvas>
+    </template>
+</dom-module>
+
+<script>
+    class ArtCanvas {
+        beforeRegister () {
+            this.is = 'art-canvas';
+            this.properties = {
+                code: {
+                    type: String,
+                    observer: 'codeChanged'
+                }
+            }
+        }
+
+        attached () {
+            this.ctx = this.$.canvas.getContext('2d');
+            this.evalArt = new EvalArt(this.ctx);
+            this.codeChanged();
+        }
+
+        codeChanged () {
+            if (!this.ctx) {
+                return;
+            }
+            this.ctx.clearRect(0, 0, this.$.canvas.width, this.$.canvas.height);
+            this.evalArt.evalInContext(this.code);
+        }
+    }
+
+    Polymer(ArtCanvas);
+</script>

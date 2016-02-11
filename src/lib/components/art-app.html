@@ -1,0 +1,23 @@
+<link rel="import" href="./art-editor.html">
+<link rel="import" href="./art-canvas.html">
+
+<dom-module id="art-app">
+    <template>
+        <style>
+
+        </style>
+        <h1>Polymer Art</h1>
+        <art-editor code="{{code}}"></art-editor>
+        <art-canvas code="{{code}}"></art-canvas>
+    </template>
+</dom-module>
+
+<script>
+    class ArtApp {
+        beforeRegister () {
+            this.is = "art-app";
+        }
+    }
+
+    Polymer(ArtApp);
+</script>

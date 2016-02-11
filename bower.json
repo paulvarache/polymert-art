@@ -1,0 +1,22 @@
+{
+  "name": "polymer-art",
+  "description": "",
+  "main": "www/index.html",
+  "authors": [
+    "Paul Varache <perso@paulvarache.ninja>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/paulvarache/polymert-art",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.2.4"
+  }
+}
